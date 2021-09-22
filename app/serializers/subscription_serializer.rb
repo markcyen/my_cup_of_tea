@@ -12,4 +12,18 @@ class SubscriptionSerializer
       }
     }
   end
+
+  def self.activate(user, tea, new_subscription)
+    {
+      data: {
+        id: user.id,
+        name: user.full_name,
+        email: user.email,
+        tea: tea.variety,
+        type: 'user new subscription',
+        message: 'New subscription successfully created!',
+        attributes: new_subscription
+      }
+    }
+  end
 end
