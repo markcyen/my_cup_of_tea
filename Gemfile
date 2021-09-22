@@ -36,6 +36,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'rubocop-rails'
+  gem 'jsonapi-serializer'
 end
 
 group :development do
