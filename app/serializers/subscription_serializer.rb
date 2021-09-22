@@ -1,5 +1,6 @@
 class SubscriptionSerializer
   include JSONAPI::Serializer
+  attributes :title, :price, :status, :frequency, :tea_id, :user_id
   
   def self.subscriptions_list(user_data, user_subscriptions)
     {
