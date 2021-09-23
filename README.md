@@ -13,7 +13,15 @@ This project was worked on over about two days.
 - Ruby 2.7.2
 - Rails 6.1.4.1
 
+### Setup
+- Either fork this repo or `git clone git@github.com:markcyen/my_cup_of_tea.git`. In the command line, type in `bundle install` to properly install the ruby gems.
+
+### Database Design
+![tea_schema](https://user-images.githubusercontent.com/77414433/134444043-885b5b9b-82ea-4dbd-aa7c-d3334dfa4fd0.jpg)
+
+
 ### System dependencies
+In the Gemfile, you will find the following system dependencies:
 - `gem 'factory_bot_rails'`
 - `gem 'faker'`
 - `gem 'rspec-rails'`
@@ -25,10 +33,10 @@ This project was worked on over about two days.
 - `gem 'jsonapi-serializer'`
 
 ### Database creation
-- In the command line, type in `ails db:{drop,create,migrate}` to set up your local environment database
+- In the command line, type in `rails db:{drop,create,migrate}` to set up your local environment database
 
 ### How to run the test suite
-- In the command line, type in `bundle install` to properly install the ruby gems. To run the test, type in `bundle exec rspec` in the command line to run the test and check the test coverage.
+- To run the test, type in `bundle exec rspec` in the command line to run the test and check the test coverage.
   
 # Requests and Responses
 
