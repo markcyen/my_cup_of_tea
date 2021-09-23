@@ -17,7 +17,7 @@ class SubscriptionSerializer
   def self.activate(user, tea, new_subscription)
     {
       data: {
-        id: user.id,
+        id: new_subscription.id,
         name: user.full_name,
         email: user.email,
         tea: tea.variety,
