@@ -21,7 +21,7 @@ This project was worked on over about two days.
 
 
 ### External libraries (ruby gems)
-In the Gemfile, you will find the following system dependencies:
+In the Gemfile, you will find the following libraries used in this Rails app:
 - `gem 'factory_bot_rails'`
 - `gem 'faker'`
 - `gem 'rspec-rails'`
@@ -88,7 +88,7 @@ In the Gemfile, you will find the following system dependencies:
 
 ### An endpoint to display a list of a customer's subscriptions
 #### Example Request
- - General Query: `GET "/api/v1/users/<user.id>/subscriptions"`
+ - General and Rails-specific Query: `GET "/api/v1/users/<user.id>/subscriptions"`
 
 #### Example Response
 ````json
@@ -108,7 +108,7 @@ In the Gemfile, you will find the following system dependencies:
         {
           "title": "Green Tea Standard",
           "price": 5.82,
-          "status": "Active",
+          "status": "Cancelled",
           "frequency": "Every three weeks"
       } ]
     }
