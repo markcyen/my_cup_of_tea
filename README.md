@@ -16,11 +16,11 @@ This project was worked on over about two days.
 ### Setup
 - Either fork this repo or `git clone git@github.com:markcyen/my_cup_of_tea.git`. In the command line, type in `bundle install` to properly install the ruby gems.
 
-### Database Design
+### Database design
 ![tea_schema](https://user-images.githubusercontent.com/77414433/134444043-885b5b9b-82ea-4dbd-aa7c-d3334dfa4fd0.jpg)
 
 
-### System dependencies
+### External libraries (ruby gems)
 In the Gemfile, you will find the following system dependencies:
 - `gem 'factory_bot_rails'`
 - `gem 'faker'`
@@ -42,7 +42,9 @@ In the Gemfile, you will find the following system dependencies:
 
 ### An endpoint to subscribe a customer to a tea subscription
 #### Example Request
-`POST "/api/v1/users/#{user_1.id}/subscriptions", params { title: 'Jasmine Premium', price: 10.24, tea_id: 1, status: 'Active', frequency: 'Every two weeks' }`
+ - General Query: `POST "/api/v1/users/<user.id>/subscriptions?'<Tea Title>'='Jasmine Premium'&'<Tea Price>'=10.24&'<Subscription Status>'='Active'&'<Subscription Frequency>'='Every two weeks'"`
+
+ - Rails-specific Query: `POST "/api/v1/users/<user.id>/subscriptions, params { title: 'Jasmine Premium', price: 10.24, tea_id: 1, status: 'Active', frequency: 'Every two weeks' }`
 
 #### Example Response
 ````json
@@ -62,7 +64,9 @@ In the Gemfile, you will find the following system dependencies:
 
 ### An endpoint to show a customer updated a tea subscription
 #### Example Request
-`PATCH "/api/v1/users/#{user_1.id}/subscriptions/#{subscription_1.id}", params { status: 'Cancelled' }`
+- General Query: `PATCH "/api/v1/users/<user.id>/subscriptions/<subscription.id>?'<Subscription Status>'='Cancelled'"`
+
+- Rails-specific Query: `PATCH "/api/v1/users/<user.id>/subscriptions/<subscription.id>", params { status: 'Cancelled' }`
 
 #### Example Response
 ````json
@@ -84,13 +88,13 @@ In the Gemfile, you will find the following system dependencies:
 
 ### An endpoint to display a list of a customer's subscriptions
 #### Example Request
-`GET "/api/v1/users/#{user_1.id}/subscriptions"`
+ - General Query: `GET "/api/v1/users/<user.id>/subscriptions"`
 
 #### Example Response
 ````json
 {
   "data": { 
-     "id": "user_1.id",
+     "id": "user.id",
      "name": "user name",
      "email": "user email",
      "type": "user subscriptions",
