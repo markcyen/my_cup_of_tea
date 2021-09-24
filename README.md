@@ -64,7 +64,7 @@ In the Gemfile, you will find the following libraries used in this Rails app:
 
 ### An endpoint to show a customer updated a tea subscription
 #### Example Request
-- General Query: `PATCH "/api/v1/users/<user.id>/subscriptions/<subscription.id>?status=<Subscription Status>='Cancelled'"`
+- General Query: `PATCH "/api/v1/users/<user.id>/subscriptions/<subscription.id>?status=<Subscription Status>"`
 
 - Rails-specific Query: `PATCH "/api/v1/users/<user.id>/subscriptions/<subscription.id>", params { status: 'Cancelled' }`
 
