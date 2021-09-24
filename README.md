@@ -42,7 +42,7 @@ In the Gemfile, you will find the following libraries used in this Rails app:
 
 ### An endpoint to subscribe a customer to a tea subscription
 #### Example Request
- - General Query: `POST "/api/v1/users/<user.id>/subscriptions?'<Tea Title>'='Jasmine Premium'&'<Tea Price>'=10.24&'<Subscription Status>'='Active'&'<Subscription Frequency>'='Every two weeks'"`
+ - General Query: `POST "/api/v1/users/<user.id>/subscriptions?title=<tea.title>&price=<Tea Price>&status=<Subscription Status>&frequency=<Subscription Frequency>"`
 
  - Rails-specific Query: `POST "/api/v1/users/<user.id>/subscriptions", params { title: 'Jasmine Premium', price: 10.24, tea_id: 1, status: 'Active', frequency: 'Every two weeks' }`
 
@@ -64,7 +64,7 @@ In the Gemfile, you will find the following libraries used in this Rails app:
 
 ### An endpoint to show a customer updated a tea subscription
 #### Example Request
-- General Query: `PATCH "/api/v1/users/<user.id>/subscriptions/<subscription.id>?'<Subscription Status>'='Cancelled'"`
+- General Query: `PATCH "/api/v1/users/<user.id>/subscriptions/<subscription.id>?status=<Subscription Status>='Cancelled'"`
 
 - Rails-specific Query: `PATCH "/api/v1/users/<user.id>/subscriptions/<subscription.id>", params { status: 'Cancelled' }`
 
