@@ -44,7 +44,7 @@ In the Gemfile, you will find the following libraries used in this Rails app:
 #### Example Request
  - General Query: `POST "/api/v1/users/<user.id>/subscriptions?'<Tea Title>'='Jasmine Premium'&'<Tea Price>'=10.24&'<Subscription Status>'='Active'&'<Subscription Frequency>'='Every two weeks'"`
 
- - Rails-specific Query: `POST "/api/v1/users/<user.id>/subscriptions, params { title: 'Jasmine Premium', price: 10.24, tea_id: 1, status: 'Active', frequency: 'Every two weeks' }`
+ - Rails-specific Query: `POST "/api/v1/users/<user.id>/subscriptions", params { title: 'Jasmine Premium', price: 10.24, tea_id: 1, status: 'Active', frequency: 'Every two weeks' }`
 
 #### Example Response
 ````json
