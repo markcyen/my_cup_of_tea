@@ -33,7 +33,7 @@ In the Gemfile, you will find the following libraries used in this Rails app:
 - `gem 'jsonapi-serializer'`
 
 ### Database creation
-- In the command line, type in `rails db:{drop,create,migrate}` to set up your local environment database
+- In the command line, type in `rails db:{drop,setup}` to set up your local environment database. Type in `rails server` to run this app in your local environment (ie, `http://localhost:3000`) and append any of the URIs below. Alternatively, this app can test the following resquests and responses in [postman API platform](https://www.postman.com/).
 
 ### How to run the test suite
 - To run the test, type in `bundle exec rspec` in the command line to run the test and check the test coverage.
