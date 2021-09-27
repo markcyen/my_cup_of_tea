@@ -6,5 +6,5 @@ class Tea < ApplicationRecord
     less_than_or_equal_to: 150
   }
 
-  has_many :subscriptions
+  has_many :subscriptions, dependent: :destroy
 end
