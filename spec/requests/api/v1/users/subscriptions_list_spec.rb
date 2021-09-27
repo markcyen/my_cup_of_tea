@@ -7,12 +7,13 @@ RSpec.describe 'User Subscriptions List API' do
     Subscription.destroy_all
 
     @user_1 = create(:user)
+    @user_2 = create(:user)
     @tea_1 = create(:tea, variety: 'Green Tea')
     @tea_2 = create(:tea, variety: 'Jasmine')
     @tea_3 = create(:tea, variety: 'Earl Grey')
-    @tea_4 = create(:tea, variety: 'Rose Tea')
 
     @subscription_1 = create(:subscription, title: "#{@tea_1.variety} Premium", user: @user_1, tea: @tea_1, status: "Active")
+    @subscription_2 = create(:subscription, title: "#{@tea_2.variety} Special", user: @user_2, tea: @tea_2, status: "Active")
     @subscription_3 = create(:subscription, title: "#{@tea_3.variety} Standard", user: @user_1, tea: @tea_3, status: "Cancelled")
   end
 
@@ -49,13 +50,23 @@ RSpec.describe 'User Subscriptions List API' do
       subscriptions = user_1_json[:data][:attributes][:subscriptions]
 
       subscription_1 = {
+        'id': @subscription_1.id,
         'title': @subscription_1.title,
         'price': @subscription_1.price,
         'status': @subscription_1.status,
         'frequency': @subscription_1.frequency
       }
 
+      subscription_2 = {
+        'id': @subscription_2.id,
+        'title': @subscription_2.title,
+        'price': @subscription_2.price,
+        'status': @subscription_2.status,
+        'frequency': @subscription_2.frequency
+      }
+
       subscription_3 = {
+        'id': @subscription_3.id,
         'title': @subscription_3.title,
         'price': @subscription_3.price,
         'status': @subscription_3.status,
@@ -63,6 +74,7 @@ RSpec.describe 'User Subscriptions List API' do
       }
 
       expect(subscriptions).to include(subscription_1)
+      expect(subscriptions).not_to include(subscription_2)
       expect(subscriptions).to include(subscription_3)
     end
   end

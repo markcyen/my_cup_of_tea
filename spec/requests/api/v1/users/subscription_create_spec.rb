@@ -68,6 +68,7 @@ RSpec.describe 'New Subscription API' do
       subscriptions = user_1_json[:data][:attributes][:subscriptions]
 
       subscription_2 = {
+        'id': subscriptions.last[:id],
         'title': "#{@tea_2.variety} Premium",
         'price': 13.7,
         'status': 'Active',

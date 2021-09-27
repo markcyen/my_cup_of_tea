@@ -12,6 +12,7 @@ RSpec.describe SubscriptionsData do
       user_1_subscriptions = SubscriptionsData.new(user_1.subscriptions).subscriptions
 
       subscription_1_data = {
+          'id': subscription_1.id,
           'title': subscription_1.title,
           'price': subscription_1.price,
           'status': subscription_1.status,
@@ -19,6 +20,7 @@ RSpec.describe SubscriptionsData do
         }
       
       subscription_2_data = {
+        'id': subscription_2.id,
         'title': subscription_2.title,
         'price': subscription_2.price,
         'status': subscription_2.status,
