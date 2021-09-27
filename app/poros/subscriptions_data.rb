@@ -4,6 +4,7 @@ class SubscriptionsData
   def initialize(data)
     @subscriptions = data.map do |subscription|
       {
+        id: subscription.id,
         title: subscription.title,
         price: subscription.price,
         status: subscription.status,
